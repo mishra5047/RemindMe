@@ -13,14 +13,26 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends Activity {
     AnimationDrawable animDrawable;
     FirebaseAuth mAuth;
-    LoginButton layout;
+    LoginButton facebookLogin;
+    RelativeLayout phoneLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        layout = findViewById(R.id.loginButton);
-        layout.setOnClickListener(new View.OnClickListener() {
+        phoneLogin = findViewById(R.id.lay_3);
+        phoneLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, PhoneVerification.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+        facebookLogin = findViewById(R.id.loginButton);
+        facebookLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, FacebookLogin.class);

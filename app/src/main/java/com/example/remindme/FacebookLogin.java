@@ -31,6 +31,7 @@ public class FacebookLogin extends LoginActivity implements View.OnClickListener
     CallbackManager mCallbackManager;
     private FirebaseAuth mAuth;
     TextView mStatusTextView, mDetailTextView;
+    TextView next;
     int progressBar;
 
     @Override
@@ -49,6 +50,15 @@ public class FacebookLogin extends LoginActivity implements View.OnClickListener
         mCallbackManager = CallbackManager.Factory.create();
         LoginButton loginButton = findViewById(R.id.buttonFacebookLogin);
         loginButton.setReadPermissions("email", "public_profile");
+
+        next = findViewById(R.id.detail);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FacebookLogin.this, InputActivity.class);
+                startActivity(intent);
+            }
+        });
 
         loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -141,6 +151,8 @@ public class FacebookLogin extends LoginActivity implements View.OnClickListener
         if (i == R.id.buttonFacebookSignout) {
             signOut();
     }
+        Intent intent = new Intent(FacebookLogin.this, InputActivity.class);
+        startActivity(intent);
 }
 
 

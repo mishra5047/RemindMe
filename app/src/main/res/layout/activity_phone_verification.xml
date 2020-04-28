@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:id="@+id/logoVerify"
+        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        android:background="#fff"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/phone_colored"/>
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:id="@+id/layout_1"
+    android:layout_marginTop="40dp"
+    android:layout_below="@id/logoVerify"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/phone_l"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/call"
+        />
+    <EditText
+        android:id="@+id/enter_phonenumber"
+        android:layout_width="280dp"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_toRightOf="@id/phone_l"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:hint="@string/phone_number"
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/enter_phonenumber"
+        android:id="@+id/checkLength"
+        />
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="160dp"
+        android:layout_height="47dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_border_facebook"
+        android:text="@string/generate_otp"
+        android:layout_below="@id/enter_phonenumber"/>
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/layout_2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/layout_1"
+        android:layout_marginLeft="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/enter_otp"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="3dp"
+        android:hint="@string/enter_otp"
+        app:layout_constraintBottom_toTopOf="@+id/singin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/enter_otp"
+            android:id="@+id/checkOTP"
+            />
+
+        <Button
+        android:id="@+id/singin"
+        android:layout_width="160dp"
+        android:layout_height="47dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_border_phone"
+        android:text="Sumbit OTP"
+        android:layout_below="@id/enter_otp"
+         />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

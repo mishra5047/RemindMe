@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="#fff"
     android:orientation="vertical"
     android:weightSum="4">
@@ -11,14 +11,18 @@
     <ProgressBar
         android:id="@+id/progressBar"
         android:indeterminate="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
+        android:layout_height="30dp"
+        android:visibility="visible"
         style="?android:attr/progressBarStyleHorizontal"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="3"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -31,6 +35,10 @@
 
         <TextView
             android:id="@+id/titleText"
+            android:layout_marginTop="50dp"
+            android:textSize="30dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="#000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/facebook_title_text"
@@ -38,37 +46,46 @@
 
         <TextView
             android:id="@+id/status"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_marginTop="40dp"
             style="@style/ThemeOverlay.MyTextDetail"
-            android:text="@string/signed_out" />
+            android:text="@string/signed_in" />
 
         <TextView
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
-            tools:text="Firebase User ID: 123456789abc" />
-
+            android:text="Continue"
+            android:textSize="25sp"
+            android:layout_marginTop="30dp"
+            android:textColor="#000"/>
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginTop="20dp"
         android:background="@color/grey_300">
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/buttonFacebookLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="70dp"
             android:layout_centerInParent="true" />
 
         <Button
             android:id="@+id/buttonFacebookSignout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:text="@string/sign_out"
+            android:layout_below="@id/buttonFacebookSignout"
             android:theme="@style/ThemeOverlay.MyDarkButton"
             android:visibility="gone"/>
+
+
     </RelativeLayout>
 
 </LinearLayout>

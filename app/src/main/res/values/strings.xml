@@ -6,6 +6,11 @@
     <string name="facebook_status_fmt">Facebook User: %s</string>
     <string name="facebook_title_text">Facebook Login</string>
     <string name="signed_out">Signed Out</string>
+    <string name="signed_in">Signed In</string>
     <string name="firebase_status_fmt">Firebase UID: %s</string>
     <string name="sign_out">Sign Out</string>
+    <string name="verify_sign_in">Verify</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_otp">Enter OTP</string>
 </resources>
