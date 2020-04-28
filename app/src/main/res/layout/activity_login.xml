@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/left_arrow"/>
+
+
+    <TextView
+        android:id="@+id/into_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Glad To \nMeet You!"
+        android:layout_marginLeft="30dp"
+        android:layout_centerVertical="true"
+        android:textSize="45sp"
+        android:textColor="#000"
+        android:fontFamily="@font/roboto_regular"
+        android:textStyle="bold"/>
+
+
+    <RelativeLayout
+        android:id="@+id/lay_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_border_facebook"
+        android:layout_below="@id/into_text"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        >
+        <com.facebook.login.widget.LoginButton
+            android:text="Button"
+            android:textSize="25sp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/loginButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/lay_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_border_gmail"
+        android:layout_below="@id/lay_1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up With Google"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:id="@+id/gmail_text"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            />
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/google"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_border_phone"
+        android:layout_below="@id/lay_2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up With Phone"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:id="@+id/phone"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            />
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/phone"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

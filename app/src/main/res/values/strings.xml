@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RemindMe</string>
+    <string name="facebook_application_id" translatable="false">609414666311867</string>
+    <string name="label_facebook_login">Firebase + Facebook Login</string>
+    <string name="desc_facebook_login">Use a Facebook Login credential to authenticate with Firebase.</string>
+    <string name="facebook_status_fmt">Facebook User: %s</string>
+    <string name="facebook_title_text">Facebook Login</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="firebase_status_fmt">Firebase UID: %s</string>
+    <string name="sign_out">Sign Out</string>
+</resources>
