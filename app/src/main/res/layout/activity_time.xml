@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relative_layout"
+    tools:context=".TimeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000"
+        android:fontFamily="@font/roboto_regular"
+        android:id="@+id/intro"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/intro"
+        android:id="@+id/time_in"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"
+        android:text="When Do You Usually \nWake Up?"
+        android:textColor="#000"
+        />
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/down_arro"
+        android:id="@+id/btnSelect"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/time_in"
+        android:layout_above="@id/timepicker"
+        />
+    <TimePicker
+        android:layout_width="300dp"
+        android:amPmBackgroundColor="@color/Blue"
+        android:id="@+id/timepicker"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:numbersBackgroundColor="#fff"
+        android:layout_below="@id/time_in"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timepicker"
+        android:text="Selected Time is"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/t"
+        android:textColor="@color/Black"/>
+
+
+    <TextView
+        android:id="@+id/timedisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timepicker"
+        android:layout_toRightOf="@id/t"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="20dp"
+        android:textColor="@color/Black"/>
+
+    <ImageButton
+        android:id="@+id/nextbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="Continue"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/arrow_next"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        />
+</RelativeLayout>

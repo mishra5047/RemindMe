@@ -24,41 +24,44 @@ import java.util.concurrent.TimeUnit;
 public class PhoneVerification extends Activity {
 
     private EditText phoneNumber,enterOtp;
-    private Button sendOtp, signIn;
-    private String  number, otp;
+    private String  otp;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallback;
-    private FirebaseAuth auth;
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    String number ;
     private String verificationCode;
-    private ImageView img1, img2;
-
-    public String getPhoneNumber() {
-        return phoneNumber.getText().toString();
-    }
-
-    public EditText getEnterOtp() {
-        return enterOtp;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_verification);
 
-        sendOtp = (Button) findViewById(R.id.generate);
-        signIn = (Button) findViewById(R.id.singin);
-        phoneNumber = (EditText) findViewById(R.id.enter_phonenumber);
-        enterOtp = (EditText) findViewById(R.id.enter_otp);
+        Button sendOtp = findViewById(R.id.generateOTP);
+        Button signIn = findViewById(R.id.singin);
+        phoneNumber =  findViewById(R.id.enter_phonenumber);
+        enterOtp =  findViewById(R.id.enter_otp);
 
-        img1 = findViewById(R.id.checkLength);
-        img2 = findViewById(R.id.checkOTP);
-
-
+        ImageView img1 = findViewById(R.id.checkLength);
+        ImageView img2 = findViewById(R.id.checkOTP);
+        final PhoneAuthProvider authProvider = PhoneAuthProvider.getInstance();
 
         sendOtp.setOnClickListener(new View.OnClickListener() {
             @Override
               public void onClick(View v) {
-                String input = getPhoneNumber();
-                sendOtp(input);
+                String mobile = phoneNumber.getText().toString();
+                if (mobile.isEmpty()) {
+                    phoneNumber.setError("enter valid phone number");
+                    phoneNumber.requestFocus();
+                    return;
+                }
+
+                Toast.makeText(PhoneVerification.this, "No is " + mobile,Toast.LENGTH_LONG).show();
+
+                authProvider.verifyPhoneNumber(
+                        mobile,
+                        60 ,
+                        TimeUnit.SECONDS,
+                        PhoneVerification.this,
+                        mCallback);
             }});
 
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -72,22 +75,7 @@ public class PhoneVerification extends Activity {
 
     }
 
-    private void sendOtp(String number){
-        if (number.equals("")) {
-            Toast.makeText(PhoneVerification.this, "Input Is Null", Toast.LENGTH_LONG).show();
-        }
 
-        else
-        {
-            if (number.length() == 10) img1.setImageResource(R.drawable.tick);
-
-            PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                    "+91" + number,
-                    60 ,
-                    TimeUnit.SECONDS,
-                    PhoneVerification.this,
-                    mCallback);
-        }}
 
     private void SigninWithPhone(PhoneAuthCredential credential){
         auth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

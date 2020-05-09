@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, TimeActivity.class));
                 Animatoo.animateCard(MainActivity.this);
             }
         });

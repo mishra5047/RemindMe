@@ -49,7 +49,7 @@
         android:id="@+id/checkLength"
         />
     <Button
-        android:id="@+id/generate"
+        android:id="@+id/generateOTP"
         android:layout_width="160dp"
         android:layout_height="47dp"
         android:layout_centerHorizontal="true"

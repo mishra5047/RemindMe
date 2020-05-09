@@ -3,6 +3,7 @@
     package="com.example.remindme">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PhoneVerification"></activity>
+        <activity android:name=".EnterActivity"></activity>
+        <activity android:name=".TimeActivity" />
+        <activity android:name=".PhoneVerification" />
         <activity android:name=".FacebookLogin" />
         <activity android:name=".InputActivity" />
         <activity android:name=".LoginActivity" />

@@ -13,4 +13,6 @@
     <string name="generate_otp">Generate OTP</string>
     <string name="phone_number">Phone Number</string>
     <string name="enter_otp">Enter OTP</string>
+    <string name="channel_name">RemindMe</string>
+    <string name="channel_description">Salutation</string>
 </resources>
