@@ -3,6 +3,8 @@ package com.example.remindme.Model;
 public class ItemAdapter {
     private String title;
     private String description;
+    private String priority;
+    private int image;
 
     public String getPriority() {
         return priority;
@@ -11,10 +13,6 @@ public class ItemAdapter {
     public void setPriority(String priority) {
         this.priority = priority;
     }
-
-    private String priority;
-    private int image;
-
     public String getTitle() {
         return title;
     }

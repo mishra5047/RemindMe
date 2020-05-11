@@ -3,20 +3,13 @@ package com.example.remindme;
 import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
-
-import androidx.core.app.NotificationCompat;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,10 +28,19 @@ public class TimeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time);
 
+        SimpleDateFormat date = new SimpleDateFormat("k");
+        final String t = date.format(new Date());
+
+//        if (checkTime(t))
+//            setContentView(R.layout.activity_time_dark);
+
+
+
+
         layout = findViewById(R.id.relative_layout);
-        layout.setBackgroundResource(R.drawable.gradient_animation);
-        AnimationDrawable animDrawable = (AnimationDrawable) layout.getBackground();
-        animDrawable.start();
+//        layout.setBackgroundResource(R.drawable.gradient_animation);
+//        AnimationDrawable animDrawable = (AnimationDrawable) layout.getBackground();
+//        animDrawable.start();
 
         timePicker = findViewById(R.id.timepicker);
 
@@ -137,6 +139,10 @@ public class TimeActivity extends Activity {
 //            Toast.makeText(this, "Not Equal", Toast.LENGTH_LONG).show();
 //    }
 
+    boolean checkTime(String t){
+        return (t.equals("20") || t.equals("21") || t.equals("22") || t.equals("23") || t.equals("24") || t.equals("1") || t.equals("2")
+                || t.equals("3") || t.equals("4") || t.equals("5"));
+    }
     @Override
     protected void onStart() {
         super.onStart();

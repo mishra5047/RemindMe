@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:fontFamily="@font/roboto_regular"
+    android:layout_margin="5dp"
     android:background="@drawable/rounded_border_grey"
     android:layout_height="wrap_content">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 <ImageView
-    android:layout_width="60dp"
-    android:layout_height="60dp"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
     android:id="@+id/imageItem"
     android:layout_marginTop="20dp"
     android:layout_marginLeft="30dp"
@@ -37,22 +41,24 @@
         />
 
     <TextView
-        android:id="@+id/priority"
+        android:id="@+id/priorityItem"
         android:layout_below="@id/descItem"
         android:layout_toRightOf="@id/imageItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12sp"
+        android:layout_marginTop="5dp"
         android:text="Priority"
         android:textStyle="bold"
         android:textColor="@color/Red"/>
     <ImageButton
         android:id="@+id/btnOptions"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="30dp"
         android:background="@drawable/option_large"
         />
-</RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

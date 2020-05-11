@@ -8,6 +8,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.remindme.Model.ItemAdapter;
 import com.example.remindme.Model.ReminderAdapter;
 import com.gauravk.bubblenavigation.BubbleNavigationConstraintView;
@@ -21,7 +24,6 @@ import java.util.Date;
 import java.util.List;
 
 public class EnterActivity extends Activity {
-    boolean click;
     int i = 1;
     List<ItemAdapter> list = new ArrayList<>();
     ReminderAdapter reminderAdapter;
@@ -31,29 +33,7 @@ public class EnterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
 
-        RelativeLayout relativeLayout = findViewById(R.id.relative_layout);
-
-        ItemAdapter itemAdapter = new ItemAdapter();
-        itemAdapter.setImage(R.drawable.book_1);
-        itemAdapter.setTitle("Study AM - IV");
-        itemAdapter.setDescription("Unit 1");
-        itemAdapter.setPriority("High");
-        list.add(itemAdapter);
-
-        itemAdapter = new ItemAdapter();
-        itemAdapter.setImage(R.drawable.book_2);
-        itemAdapter.setTitle("Study TOC");
-        itemAdapter.setDescription("Unit 1");
-        itemAdapter.setPriority("Medium");
-        list.add(itemAdapter);
-
-        itemAdapter = new ItemAdapter();
-        itemAdapter.setImage(R.drawable.book_3);
-        itemAdapter.setTitle("Watch Friends");
-        itemAdapter.setDescription("Season 2");
-        itemAdapter.setPriority("Low");
-        list.add(itemAdapter);
-
+        recyclerview();
 
         final TextView txt = findViewById(R.id.date);
         ImageButton nextdate = findViewById(R.id.dateNext);
@@ -64,6 +44,16 @@ public class EnterActivity extends Activity {
         final String todayDate = sdf.format(new Date());
         txt.setText(todayDate);
 
+        //today's date
+        TextView today = findViewById(R.id.txt);
+        today.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txt.setText(todayDate);
+            }
+        });
+
+        //prev date
         prevdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +68,8 @@ public class EnterActivity extends Activity {
                 }
             }
         });
+
+        //next date
         nextdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,5 +127,35 @@ public class EnterActivity extends Activity {
         calendar.setTime(date);
         calendar.add(Calendar.DAY_OF_YEAR, -no);
         return format.format(calendar.getTime());
+    }
+
+    void recyclerview(){
+        RecyclerView recyclerview = findViewById(R.id.recyclerView);
+
+        ItemAdapter itemAdapter = new ItemAdapter();
+        itemAdapter.setImage(R.drawable.book_1);
+        itemAdapter.setTitle("Study AM - IV");
+        itemAdapter.setDescription("Unit 1");
+        itemAdapter.setPriority("High");
+        list.add(itemAdapter);
+
+        itemAdapter = new ItemAdapter();
+        itemAdapter.setImage(R.drawable.book_2);
+        itemAdapter.setTitle("Study TOC");
+        itemAdapter.setDescription("Unit 1");
+        itemAdapter.setPriority("Medium");
+        list.add(itemAdapter);
+
+        itemAdapter = new ItemAdapter();
+        itemAdapter.setImage(R.drawable.book_3);
+        itemAdapter.setTitle("Watch Friends");
+        itemAdapter.setDescription("Season 2");
+        itemAdapter.setPriority("Low");
+        list.add(itemAdapter);
+
+        reminderAdapter = new ReminderAdapter(list, this);
+        recyclerview.setAdapter(reminderAdapter);
+        recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        reminderAdapter.notifyDataSetChanged();
     }
 }

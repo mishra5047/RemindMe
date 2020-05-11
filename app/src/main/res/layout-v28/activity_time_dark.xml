@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_start"
+    android:background="@color/Black"
     android:id="@+id/relative_layout"
     tools:context=".TimeActivity">
 
@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"
         android:textSize="30dp"
         android:layout_marginLeft="10dp"
-        android:textColor="#000"
+        android:textColor="@color/White"
         android:fontFamily="@font/roboto_regular"
         android:id="@+id/intro"/>
 
@@ -29,13 +29,13 @@
         android:textSize="30sp"
         android:layout_marginLeft="10dp"
         android:text="When Do You Usually \nWake Up?"
-        android:textColor="#000"
+        android:textColor="@color/White"
         />
 
     <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/down_arro"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/arrow_down_white"
         android:id="@+id/btnSelect"
         android:layout_marginBottom="20dp"
         android:layout_toRightOf="@id/time_in"
@@ -48,6 +48,8 @@
         android:id="@+id/timepicker"
         android:layout_marginTop="10dp"
         android:visibility="invisible"
+        android:numbersSelectorColor="@color/SkyBlue"
+        android:numbersInnerTextColor="@color/White"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:numbersBackgroundColor="#fff"
@@ -64,7 +66,7 @@
         android:textSize="25sp"
         android:layout_marginLeft="10dp"
         android:id="@+id/t"
-        android:textColor="@color/Black"/>
+        android:textColor="@color/White"/>
 
 
     <TextView
@@ -77,7 +79,7 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/roboto_regular"
         android:textSize="25dp"
-        android:textColor="@color/Black"/>
+        android:textColor="@color/White"/>
 
     <ImageButton
         android:id="@+id/nextbtn"

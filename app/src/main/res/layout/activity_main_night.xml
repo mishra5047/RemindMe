@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/rootLayout"
-    android:background="@color/WhiteSmoke"
+    android:background="@color/Black"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -15,24 +15,24 @@
         android:text="Remind\n    Me"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:textSize="40sp"
+        android:textSize="45sp"
         android:fontFamily="@font/roboto_thin"
         android:textStyle="bold"
-        android:textColor="@color/Black"/>
+        android:textColor="@color/White"/>
 
-<ImageView
-    android:id="@+id/sunset"
-    android:layout_width="250dp"
-    android:layout_height="250dp"
-    android:layout_centerInParent="true"
-    android:src="@drawable/sun"
-    />
+    <ImageView
+        android:id="@+id/sunset"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="13dp"
+        android:src="@drawable/moon" />
 
     <RelativeLayout
         android:id="@+id/login"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:background="@drawable/rounded_border"
+        android:background="@drawable/rounded_border_lightblue"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         android:layout_below="@id/sunset">
