@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/rootLayout"
-    android:background="@color/WhiteSmoke"
+    android:background="@color/Black"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -18,7 +18,7 @@
         android:textSize="40sp"
         android:fontFamily="@font/roboto_thin"
         android:textStyle="bold"
-        android:textColor="@color/Black"/>
+        android:textColor="@color/White"/>
 
 <ImageView
     android:id="@+id/sunset"
@@ -32,7 +32,7 @@
         android:id="@+id/login"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:background="@drawable/rounded_border"
+        android:background="@drawable/rounded_border_orange"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         android:layout_below="@id/sunset">

@@ -31,11 +31,6 @@ public class TimeActivity extends Activity {
         SimpleDateFormat date = new SimpleDateFormat("k");
         final String t = date.format(new Date());
 
-//        if (checkTime(t))
-//            setContentView(R.layout.activity_time_dark);
-
-
-
 
         layout = findViewById(R.id.relative_layout);
 //        layout.setBackgroundResource(R.drawable.gradient_animation);
@@ -78,7 +73,6 @@ public class TimeActivity extends Activity {
                 min = timePicker.getMinute();
                 String time = hour + ":" + min;
                 timeDisp.setText(time);
-//                checkTime(time, currentDateandTime);
                 showTime(hour, min);
 
             }
@@ -106,12 +100,6 @@ public class TimeActivity extends Activity {
             format = "AM";
         }
 
-//        timeDisp.setText(new StringBuilder().append(hour).append(" : ").append(min).append(" ").append(format));
-
-    }
-
-    public void generateNotification(){
-
     }
 
     private void createNotificationChannel() {
@@ -130,14 +118,6 @@ public class TimeActivity extends Activity {
         else
         notificationManager.createNotificationChannel(channel);
     }
-//    void checkTime(String a, String b){
-//        if (a.equals(b)){
-//            Toast.makeText(this, "Equal", Toast.LENGTH_LONG).show();
-//            generateNotification();
-//        }
-//        else
-//            Toast.makeText(this, "Not Equal", Toast.LENGTH_LONG).show();
-//    }
 
     boolean checkTime(String t){
         return (t.equals("20") || t.equals("21") || t.equals("22") || t.equals("23") || t.equals("24") || t.equals("1") || t.equals("2")
@@ -146,5 +126,11 @@ public class TimeActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
+    }
+
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

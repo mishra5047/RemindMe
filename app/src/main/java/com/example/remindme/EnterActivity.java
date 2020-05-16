@@ -1,6 +1,7 @@
 package com.example.remindme;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -27,13 +28,28 @@ public class EnterActivity extends Activity {
     int i = 1;
     List<ItemAdapter> list = new ArrayList<>();
     ReminderAdapter reminderAdapter;
-
+    String taskName, description, priority;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
 
-        recyclerview();
+        RecyclerView recyclerview = findViewById(R.id.recyclerView);
+
+//        recyclerview.setVisibility();
+        Intent intent = getIntent();
+
+         taskName = intent.getStringExtra("Task_Name");
+        description = intent.getStringExtra("Description");
+        priority = intent.getStringExtra("Priority");
+
+        recyclerview(taskName, description, priority);
+
+        reminderAdapter = new ReminderAdapter(list, this);
+        recyclerview.setAdapter(reminderAdapter);
+        recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        reminderAdapter.notifyDataSetChanged();
+
 
         final TextView txt = findViewById(R.id.date);
         ImageButton nextdate = findViewById(R.id.dateNext);
@@ -83,7 +99,6 @@ public class EnterActivity extends Activity {
             }
         });
 
-
         // bottom navigation bar
         BubbleNavigationConstraintView bubblenavigation = findViewById(R.id.bottom_navigation_constraint);
 
@@ -97,8 +112,10 @@ public class EnterActivity extends Activity {
                 else if(position == 1)
                     Toast.makeText(EnterActivity.this, "Opening Alarm", Toast.LENGTH_LONG).show();
 
-                else if(position == 2)
-                    Toast.makeText(EnterActivity.this, "Adding Item", Toast.LENGTH_LONG).show();
+                else if(position == 2){
+                    Intent intent = new Intent(EnterActivity.this, AddActivity.class);
+                    startActivity(intent);
+                }
 
                 else if(position == 3)
                     Toast.makeText(EnterActivity.this, "Opening Checkist", Toast.LENGTH_LONG).show();
@@ -129,33 +146,36 @@ public class EnterActivity extends Activity {
         return format.format(calendar.getTime());
     }
 
-    void recyclerview(){
-        RecyclerView recyclerview = findViewById(R.id.recyclerView);
+    void recyclerview(String name, String description, String priority){
 
         ItemAdapter itemAdapter = new ItemAdapter();
-        itemAdapter.setImage(R.drawable.book_1);
-        itemAdapter.setTitle("Study AM - IV");
-        itemAdapter.setDescription("Unit 1");
-        itemAdapter.setPriority("High");
+        itemAdapter.setImage(R.drawable.summertime);
+        itemAdapter.setTitle(name);
+        itemAdapter.setDescription(description);
+        itemAdapter.setPriority(priority);
         list.add(itemAdapter);
 
-        itemAdapter = new ItemAdapter();
-        itemAdapter.setImage(R.drawable.book_2);
-        itemAdapter.setTitle("Study TOC");
-        itemAdapter.setDescription("Unit 1");
-        itemAdapter.setPriority("Medium");
-        list.add(itemAdapter);
+//        itemAdapter = new ItemAdapter();
+//        itemAdapter.setImage(R.drawable.book_2);
+//        itemAdapter.setTitle("Study TOC");
+//        itemAdapter.setDescription("Unit 1");
+//        itemAdapter.setPriority("Medium");
+//        list.add(itemAdapter);
+//
+//        itemAdapter = new ItemAdapter();
+//        itemAdapter.setImage(R.drawable.book_3);
+//        itemAdapter.setTitle("Watch Friends");
+//        itemAdapter.setDescription("Season 2");
+//        itemAdapter.setPriority("Low");
+//        list.add(itemAdapter);
+//
 
-        itemAdapter = new ItemAdapter();
-        itemAdapter.setImage(R.drawable.book_3);
-        itemAdapter.setTitle("Watch Friends");
-        itemAdapter.setDescription("Season 2");
-        itemAdapter.setPriority("Low");
-        list.add(itemAdapter);
+    }
 
-        reminderAdapter = new ReminderAdapter(list, this);
-        recyclerview.setAdapter(reminderAdapter);
-        recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        reminderAdapter.notifyDataSetChanged();
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, TimeActivity.class);
+        startActivity(intent);
     }
 }

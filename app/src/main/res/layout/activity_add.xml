@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBE9E7"
+    tools:context=".AddActivity">
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_marginLeft="15dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background = "@drawable/left_arrow"
+        />
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create \nNew Task"
+        android:layout_below="@id/backBtn"
+        android:textSize="35sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/Black"
+        android:fontFamily="@font/roboto_regular"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:id="@+id/n"
+        android:layout_below="@id/txt"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/taskName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/n"
+        android:textSize="25sp"
+        android:text="Task Name"
+        android:textColor="@color/Black"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_border_white"
+        android:layout_below="@id/taskName">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:text="Date"
+            android:id="@+id/d"
+            />
+
+        <EditText
+            android:id="@+id/dateInput"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/d"
+            android:layout_marginLeft="15dp"
+            android:textSize="25sp"
+            android:text="Wednesday 13, May"
+            />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateInput"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="Description"
+            android:layout_marginLeft="20dp"
+            />
+
+        <EditText
+            android:id="@+id/descInput"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/desc"
+            android:layout_marginLeft="15dp"
+            android:textSize="25sp"
+            android:text="Description"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/d"
+            android:layout_toRightOf="@id/dateInput"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/calendar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Priority ="
+            android:layout_below="@id/dateInput"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:id="@+id/prior"
+            />
+
+        <TextView
+            android:id="@+id/priorDisp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/prior"
+            android:layout_marginTop="100dp"
+            android:layout_below="@id/dateInput"/>
+
+        <Button
+            android:id="@+id/priorHigh"
+            android:layout_below="@id/priorDisp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="High"
+            android:background="@color/LightCoral"
+            android:textSize="20sp"
+            android:textColor="@color/Black"/>
+
+        <Button
+            android:id="@+id/priorMed"
+            android:layout_toRightOf="@id/priorHigh"
+            android:layout_below="@id/priorDisp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Medium"
+            android:background="@color/LightGreen"
+            android:textSize="20sp"
+            android:textColor="@color/Black"/>
+
+        <Button
+            android:id="@+id/priorLow"
+            android:layout_toRightOf="@id/priorMed"
+            android:layout_below="@id/priorDisp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Low"
+            android:background="@color/LightCyan"
+            android:textSize="20sp"
+            android:textColor="@color/Black"/>
+
+        <RelativeLayout
+            android:id="@+id/createTask"
+            android:layout_height="55dp"
+            android:layout_width="370dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_border_purple"
+            android:layout_below="@id/priorLow">
+
+            <ImageView
+                android:id="@+id/abc"
+                android:layout_width="35dp"
+                android:layout_marginLeft="90dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/add_white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txtx"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/abc"
+                android:text="Create Task"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/White"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="28sp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

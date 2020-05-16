@@ -14,7 +14,7 @@
     android:layout_height="70dp"
     android:id="@+id/imageItem"
     android:layout_marginTop="20dp"
-    android:layout_marginLeft="30dp"
+    android:layout_marginLeft="20dp"
     android:layout_marginRight="15dp"
     android:layout_marginBottom="20dp"
     />
@@ -46,7 +46,7 @@
         android:layout_toRightOf="@id/imageItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:text="Priority"
         android:textStyle="bold"

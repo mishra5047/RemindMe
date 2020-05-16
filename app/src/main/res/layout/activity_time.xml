@@ -47,7 +47,6 @@
         android:outlineAmbientShadowColor="@color/LightBlue"
         android:id="@+id/timepicker"
         android:layout_marginTop="10dp"
-        android:visibility="invisible"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:numbersBackgroundColor="#fff"

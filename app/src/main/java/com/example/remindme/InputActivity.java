@@ -1,10 +1,9 @@
 package com.example.remindme;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.os.Bundle;
 
-public class InputActivity extends AppCompatActivity {
+public class InputActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
